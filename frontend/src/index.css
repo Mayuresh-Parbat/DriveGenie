@@ -1,0 +1,37 @@
+/* RESET + CLEAN BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  transition: 0.4s;
+}
+
+/* REMOVE FIXED WIDTH → FULL SCREEN */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* OPTIONAL SMOOTH TEXT */
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* SCROLLBAR (optional premium feel) */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffcc;
+  border-radius: 10px;
+}
