@@ -253,3 +253,77 @@
   object-fit: contain;
   border-radius: 20px;
 }
+/* FEATURED CARS */
+/* FEATURED SECTION */
+.featured {
+  padding: 80px 60px;
+}
+
+.featured h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.car-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+}
+
+/* DARK MODE CARD */
+.app.dark .car-card {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* LIGHT MODE CARD */
+.app.light .car-card {
+  background: #ffffff;
+}
+
+/* HOVER EFFECT */
+.car-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* IMAGE */
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* INFO */
+.car-info {
+  padding: 20px;
+}
+
+.car-info h3 {
+  margin-bottom: 8px;
+}
+
+.car-info p {
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.view-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #00ffcc, #4facfe);
+  font-weight: 600;
+}

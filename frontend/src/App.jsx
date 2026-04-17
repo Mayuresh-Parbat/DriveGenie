@@ -187,8 +187,88 @@ function App() {
   </div>
 
 </section>
-    </div>
-  );
+{/* FEATURED CARS */}
+{/* FEATURED CARS */}
+<section className="featured">
+  <h2>Featured Cars</h2>
+
+  <div className="car-grid">
+    {[
+      {
+        name: "BMW M4",
+        price: "₹75L",
+        image: "https://backiee.com/static/wallpapers/1000x563/294176.jpg",
+      },
+      {
+        name: "Audi R8",
+        price: "₹2.3Cr",
+        image: "https://motoringworld.in/wp-content/uploads/2022/10/Audi-R8-V10-GT-RWD.jpg ",
+      },
+      {
+        name: "Tesla Model S",
+        price: "₹1.5Cr",
+        image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/93821/model-s-exterior-front-view.jpeg?q=80&q=80",
+      },
+      {
+        name: "Lamborghini Huracan",
+        price: "₹3.2Cr",
+        image: "https://s.yimg.com/ny/api/res/1.2/y6x1Kv_QhfM6wPVhFx4_uA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD03MDA-/https://media.zenfs.com/en/motorious_297/3794108e9e1c87f4c674922b51e889c6",
+      },
+      {
+        name: "Porsche 911",
+        price: "₹2Cr",
+        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+      },
+      {
+        name: "Range Rover",
+        price: "₹1.2Cr",
+        image: "https://media.cdn-jaguarlandrover.com/api/v2/images/119766/w/1600/h/650.jpg",
+      },
+      {
+        name: "Mercedes C-Class",
+        price: "₹60L",
+        image: "https://images.hgmsites.net/med/2025-mercedes-benz-c-class-c-300-4matic-sedan-angular-front-exterior-view_100959585_m.webp",
+      },
+      {
+        name: "Toyota Fortuner",
+        price: "₹45L",
+        image: "https://wallpapers.com/images/hd/toyota-fortuner-legender-super-white-yjakyf3ldvwe1knf.jpg",
+      },
+      {
+        name: "Hyundai Creta",
+        price: "₹18L",
+        image: "https://images.hindustantimes.com/auto/auto-images/hyundai/creta/exterior_hyundai-creta_front-view_600x400_04.jpg",
+      },
+      {
+        name: "Tata Nexon EV",
+        price: "₹16L",
+        image: "https://static.toiimg.com/thumb/msid-103479928,width-400,resizemode-4/103479928.jpg",
+      },
+      {
+        name: "Ferrari 488",
+        price: "₹3.5Cr",
+        image: "https://i.pinimg.com/736x/bf/5e/40/bf5e40b61090cf3760e27f1866915f35.jpg",
+      },
+      {
+        name: "Bugatti Chiron",
+        price: "₹19Cr",
+        image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b",
+      },
+    ].map((car, i) => (
+      <div key={i} className="car-card">
+        <img src={car.image} alt={car.name} />
+
+        <div className="car-info">
+          <h3>{car.name}</h3>
+          <p>{car.price}</p>
+          <button className="view-btn">View Details</button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+</div>
+);
 }
 
 export default App;
