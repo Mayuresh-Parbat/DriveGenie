@@ -1,4 +1,6 @@
-/* THEMES */
+/* =========================
+   GLOBAL / THEMES
+========================= */
 .app.dark {
   background: #0b0f19;
   color: white;
@@ -9,7 +11,9 @@
   color: #111;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -19,6 +23,8 @@
 
 .logo {
   color: #00ffcc;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .nav-links a {
@@ -35,6 +41,7 @@
   border: none;
   padding: 8px 12px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn {
@@ -42,16 +49,19 @@
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   height: 90vh;
   background-size: cover;
   background-position: center;
-  transition: 1s;
   display: flex;
   align-items: center;
+  transition: 1s;
 }
 
 .overlay {
@@ -66,6 +76,11 @@
   color: #00ffcc;
 }
 
+.hero-sub {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
 .search-box {
   margin-top: 20px;
 }
@@ -73,15 +88,21 @@
 .search-box input {
   padding: 12px;
   width: 300px;
+  border-radius: 8px;
+  border: none;
 }
 
 .search-box button {
   padding: 12px;
   background: #00ffcc;
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* BROWSE */
+/* =========================
+   BROWSE
+========================= */
 .browse {
   background: url("https://images.unsplash.com/photo-1502877338535-766e1452684a")
     no-repeat center/cover;
@@ -106,6 +127,7 @@
   overflow-x: auto;
 }
 
+/* CARD */
 .browse-card {
   min-width: 140px;
   height: 120px;
@@ -122,11 +144,20 @@
   align-items: center;
 
   transition: 0.3s;
+  cursor: pointer;
 }
 
+/* HOVER */
 .browse-card:hover {
   transform: translateY(-5px);
   background: rgba(0, 255, 204, 0.2);
+}
+
+/* ACTIVE FILTER */
+.browse-card.active {
+  border: 2px solid #00ffcc;
+  background: rgba(0, 255, 204, 0.2);
+  transform: translateY(-5px);
 }
 
 .icon {
@@ -140,7 +171,7 @@
 }
 
 .app.light .browse-overlay {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .app.light .browse-card {
@@ -148,8 +179,9 @@
   color: black;
 }
 
-/* CALCULATOR */
-/* CALCULATOR */
+/* =========================
+   CALCULATOR
+========================= */
 .calculator {
   display: flex;
   align-items: center;
@@ -158,7 +190,6 @@
   gap: 40px;
 }
 
-/* LEFT CARD */
 .calc-box {
   width: 50%;
   padding: 30px;
@@ -168,25 +199,21 @@
   background: rgba(255,255,255,0.05);
 }
 
-/* LIGHT MODE FIX */
 .app.light .calc-box {
   background: #ffffff;
 }
 
-/* SUBTEXT */
 .subtitle {
   opacity: 0.7;
   margin-bottom: 20px;
 }
 
-/* GRID */
 .calc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* INPUT */
 .calc-grid input {
   padding: 12px;
   border-radius: 10px;
@@ -194,18 +221,15 @@
   outline: none;
 }
 
-/* DARK INPUT */
 .app.dark .calc-grid input {
   background: #111827;
   color: white;
 }
 
-/* LIGHT INPUT */
 .app.light .calc-grid input {
   background: #f1f1f1;
 }
 
-/* BUTTON */
 .calc-btn {
   width: 100%;
   margin-top: 20px;
@@ -217,7 +241,6 @@
   cursor: pointer;
 }
 
-/* RESULTS */
 .results {
   display: flex;
   justify-content: space-between;
@@ -240,7 +263,6 @@
   margin-top: 5px;
 }
 
-/* RIGHT IMAGE */
 .calc-image {
   width: 50%;
   display: flex;
@@ -253,8 +275,10 @@
   object-fit: contain;
   border-radius: 20px;
 }
-/* FEATURED CARS */
-/* FEATURED SECTION */
+
+/* =========================
+   FEATURED CARS
+========================= */
 .featured {
   padding: 80px 60px;
 }
@@ -264,43 +288,43 @@
   margin-bottom: 40px;
 }
 
-/* GRID */
+/* GRID FIX (IMPORTANT) */
 .car-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
+  min-height: 400px; /* prevent layout jump */
 }
 
 /* CARD */
 .car-card {
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   transition: 0.3s;
   cursor: pointer;
-
   backdrop-filter: blur(10px);
 }
 
-/* DARK MODE CARD */
 .app.dark .car-card {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* LIGHT MODE CARD */
 .app.light .car-card {
   background: #ffffff;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .car-card:hover {
   transform: translateY(-8px) scale(1.02);
 }
 
-/* IMAGE */
+/* IMAGE FIX (CRITICAL) */
 .car-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  object-position: center;
 }
 
 /* INFO */
@@ -323,7 +347,26 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-
   background: linear-gradient(90deg, #00ffcc, #4facfe);
   font-weight: 600;
+}
+
+/* =========================
+   WISHLIST
+========================= */
+.wishlist-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.2);
 }
