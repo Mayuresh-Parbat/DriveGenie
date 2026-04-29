@@ -1,55 +1,108 @@
 # 🚗 DriveGenie – AI Car Marketplace
 
-DriveGenie is a modern AI-powered car marketplace designed to help users discover, filter, and explore cars with a premium user experience similar to CarDekho, Cars24, and Spinny.
+DriveGenie is a modern **AI-powered car marketplace** designed to help users discover, filter, and explore cars with a premium user experience similar to platforms like CarDekho, Cars24, and Spinny.
 
 ---
 
-## 🚀 Current Features (Implemented)
+## 🚀 Features
 
 ### 🎯 Core UI
-- Modern responsive UI with dark/light theme
-- Hero section with search bar
-- Glassmorphism-based design
+- Modern and fully responsive design  
+- Dark / Light theme support  
+- Hero section with integrated search bar  
+- Glassmorphism-based UI for a premium look  
+
+---
 
 ### 🔍 Browse by Type
-- Car categories (Electric, Sedan, SUV, Coupe, etc.)
-- Interactive category cards
-- Click-to-filter functionality
+- Multiple car categories:
+  - Electric
+  - Sedan
+  - SUV
+  - Coupe  
+- Interactive category cards  
+- Click-to-filter functionality  
+
+---
 
 ### ⚡ Smart Filtering System
-- Instant filtering of cars based on category
-- Dynamic rendering (React state-based filtering)
-- Active category highlight
+- Instant filtering based on selected category  
+- Dynamic rendering using React state  
+- Active category highlighting  
+
+---
 
 ### 🚗 Featured Cars Section
-- Premium car grid layout
-- Multiple car listings with images & pricing
-- Smooth hover animations
+- Premium grid layout  
+- Multiple car listings with images and pricing  
+- Smooth hover animations  
+
+---
 
 ### ❤️ Wishlist System
-- Add/remove cars from wishlist
-- Persistent UI interaction
-- Wishlist icon with real-time state update
+- Add / Remove cars from wishlist  
+- Real-time UI updates  
+- Interactive wishlist icon  
+
+---
 
 ### 🧮 Financing Calculator
-- EMI calculation UI
-- Inputs for price, interest, duration
-- Real-time results display
+- EMI calculation interface  
+- Inputs:
+  - Car price  
+  - Interest rate  
+  - Loan duration  
+- Real-time EMI results display  
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- React.js (Vite)
-- CSS3 (Custom styling, Glass UI)
+- React.js (Vite)  
+- CSS3 (Custom styling + Glassmorphism UI)  
 
-### Backend (Planned)
-- Node.js
-- Express.js
+### Backend *(Planned)*
+- Node.js  
+- Express.js  
 
-### AI (Planned)
-- Python (Recommendation Engine)
+### AI *(Planned)*
+- Python (Recommendation Engine)  
 
-### Database (Planned)
-- MongoDB
+### Database *(Planned)*
+- MongoDB  
+
+---
+
+## 📌 Project Status
+
+🚧 Currently in **frontend development phase**  
+🔜 Backend, AI integration, and database implementation planned  
+
+---
+
+## 💡 Future Enhancements
+
+- AI-based car recommendation system  
+- Advanced filtering (price range, fuel type, brand)  
+- User authentication & profiles  
+- Saved searches & personalized dashboard  
+- Backend API integration  
+- Deployment (Cloud hosting)  
+
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/drivegenie.git
+
+# Navigate to project folder
+cd drivegenie
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
