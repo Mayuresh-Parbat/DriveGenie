@@ -23,45 +23,28 @@
 
 .logo {
   color: #00ffcc;
-  font-weight: bold;
   font-size: 22px;
-}
-
-.nav-links a {
-  margin: 0 15px;
-  cursor: pointer;
-}
-
-.nav-right {
-  display: flex;
-  gap: 10px;
+  font-weight: bold;
 }
 
 .theme-btn {
   border: none;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
-}
-
-.btn {
   background: #00ffcc;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
+  color: black;
 }
 
 /* =========================
    HERO
 ========================= */
 .hero {
-  height: 90vh;
+  height: 85vh;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  transition: 1s;
 }
 
 .overlay {
@@ -69,35 +52,11 @@
 }
 
 .hero-title {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 .hero-title span {
   color: #00ffcc;
-}
-
-.hero-sub {
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
-.search-box {
-  margin-top: 20px;
-}
-
-.search-box input {
-  padding: 12px;
-  width: 300px;
-  border-radius: 8px;
-  border: none;
-}
-
-.search-box button {
-  padding: 12px;
-  background: #00ffcc;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 /* =========================
@@ -106,8 +65,7 @@
 .browse {
   background: url("https://images.unsplash.com/photo-1502877338535-766e1452684a")
     no-repeat center/cover;
-  padding: 80px 40px;
-  color: white;
+  padding: 70px 40px;
 }
 
 .browse-overlay {
@@ -116,120 +74,122 @@
   border-radius: 20px;
 }
 
-.browse h2 {
-  font-size: 40px;
-  margin-bottom: 30px;
-}
-
 .browse-row {
   display: flex;
   gap: 20px;
   overflow-x: auto;
 }
 
-/* CARD */
+/* CATEGORY CARD */
 .browse-card {
-  min-width: 140px;
-  height: 120px;
-
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-
-  border-radius: 20px;
-
+  min-width: 130px;
+  height: 110px;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* HOVER */
 .browse-card:hover {
   transform: translateY(-5px);
-  background: rgba(0, 255, 204, 0.2);
 }
 
-/* ACTIVE FILTER */
 .browse-card.active {
-  border: 2px solid #00ffcc;
-  background: rgba(0, 255, 204, 0.2);
-  transform: translateY(-5px);
+  background: rgba(0,255,204,0.25);
+  border: 1px solid #00ffcc;
 }
 
 .icon {
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
-/* LIGHT MODE FIX */
-.app.light .browse {
-  color: black;
-}
 
-.app.light .browse-overlay {
-  background: rgba(255, 255, 255, 0.85);
-}
+/* ================= CALCULATOR ================= */
 
-.app.light .browse-card {
-  background: rgba(0, 0, 0, 0.05);
-  color: black;
-}
-
-/* =========================
-   CALCULATOR
-========================= */
 .calculator {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px;
-  gap: 40px;
+  padding: 80px 60px;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
+/* LEFT BOX */
 .calc-box {
-  width: 50%;
-  padding: 30px;
+  width: 48%;
+  padding: 35px;
   border-radius: 20px;
 
   backdrop-filter: blur(20px);
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s;
 }
 
+/* LIGHT MODE FIX */
 .app.light .calc-box {
   background: #ffffff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* TITLE */
+.calc-box h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* SUBTITLE */
 .subtitle {
   opacity: 0.7;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 14px;
 }
 
+/* GRID */
 .calc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
+/* INPUT */
 .calc-grid input {
-  padding: 12px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
   outline: none;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
+/* DARK INPUT */
 .app.dark .calc-grid input {
   background: #111827;
   color: white;
 }
 
+/* LIGHT INPUT */
 .app.light .calc-grid input {
   background: #f1f1f1;
 }
 
+/* INPUT FOCUS */
+.calc-grid input:focus {
+  border: 1px solid #00ffcc;
+  box-shadow: 0 0 8px rgba(0,255,204,0.4);
+}
+
+/* BUTTON */
 .calc-btn {
   width: 100%;
   margin-top: 20px;
@@ -239,32 +199,48 @@
   background: linear-gradient(90deg, #00ffcc, #4facfe);
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+/* BUTTON HOVER */
+.calc-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* RESULTS */
 .results {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
   padding: 20px;
   border-radius: 15px;
+
   background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
 }
 
 .app.light .results {
   background: #eaeaea;
 }
 
+.results div {
+  text-align: center;
+}
+
 .results p {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.7;
 }
 
 .results h3 {
-  margin-top: 5px;
+  margin-top: 6px;
+  font-size: 18px;
 }
 
+/* RIGHT IMAGE */
 .calc-image {
-  width: 50%;
+  width: 48%;
   display: flex;
   justify-content: center;
 }
@@ -274,81 +250,135 @@
   max-width: 500px;
   object-fit: contain;
   border-radius: 20px;
+
+  transition: 0.3s;
 }
 
+/* HOVER EFFECT */
+.calc-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .calculator {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .calc-box,
+  .calc-image {
+    width: 100%;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+
+
+
 /* =========================
-   FEATURED CARS
+   FEATURED
 ========================= */
 .featured {
-  padding: 80px 60px;
+  padding: 70px 60px;
 }
 
 .featured h2 {
-  font-size: 42px;
-  margin-bottom: 40px;
+  font-size: 40px;
+  margin-bottom: 30px;
 }
 
-/* GRID FIX (IMPORTANT) */
+/* SORT */
+select {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* GRID */
 .car-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-  min-height: 400px; /* prevent layout jump */
 }
 
 /* CARD */
 .car-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
+  background: rgba(255,255,255,0.05);
   transition: 0.3s;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
 }
 
-.app.dark .car-card {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.app.light .car-card {
-  background: #ffffff;
-}
-
-/* HOVER */
 .car-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-6px);
 }
 
-/* IMAGE FIX (CRITICAL) */
+/* IMAGE FIX */
 .car-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: center;
 }
 
 /* INFO */
 .car-info {
-  padding: 20px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.car-info h3 {
-  margin-bottom: 8px;
-}
+/* =========================
+   BUTTON HIERARCHY
+========================= */
 
-.car-info p {
-  opacity: 0.7;
-  margin-bottom: 15px;
-}
-
-/* BUTTON */
+/* PRIMARY */
 .view-btn {
-  padding: 10px 18px;
-  border: none;
+  padding: 10px;
   border-radius: 10px;
+  border: none;
   cursor: pointer;
+
   background: linear-gradient(90deg, #00ffcc, #4facfe);
+  color: black;
   font-weight: 600;
+}
+
+/* SECONDARY */
+.compare-btn {
+  padding: 9px;
+  border-radius: 10px;
+  border: 1px solid #00ffcc;
+  background: transparent;
+  color: #00ffcc;
+  cursor: pointer;
+}
+
+/* ACTIVE */
+.compare-btn.active {
+  background: #00ffcc;
+  color: black;
+  border: none;
+}
+
+/* DISABLED */
+.compare-btn.disabled {
+  background: #333;
+  color: #888;
+  border: none;
+  cursor: not-allowed;
 }
 
 /* =========================
@@ -358,63 +388,21 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  color: white;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
   padding: 6px;
   border-radius: 50%;
-}
-
-.wishlist-icon:hover {
-  transform: scale(1.2);
-}
-
-
-.sort-bar {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-.sort-bar select {
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: none;
-  background: #111827;
-  color: white;
   cursor: pointer;
 }
 
-.app.light .sort-bar select {
-  background: #f1f1f1;
-  color: black;
-}
-
-/* COMPARE BUTTON */
-.compare-btn {
-  margin-top: 10px;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background: #1f2937;
-  color: white;
-}
-
-.compare-btn.active {
-  background: #00ffcc;
-  color: black;
-}
-
-/* FLOAT BAR */
+/* =========================
+   COMPARE BAR
+========================= */
 .compare-bar {
   position: fixed;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #111827;
+  background: #111;
   padding: 15px 25px;
   border-radius: 12px;
   display: flex;
@@ -431,191 +419,13 @@
   cursor: pointer;
 }
 
-/* MODAL */
-.compare-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.compare-box {
-  background: #0b0f19;
-  padding: 30px;
-  border-radius: 20px;
-  width: 80%;
-}
-
-.compare-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.compare-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.close-btn {
-  float: right;
-  cursor: pointer;
-  background: red;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-}
-
-
-/* COMPARE BUTTON */
-/* BUTTON HIERARCHY */
-.view-btn {
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(90deg, #00ffcc, #4facfe);
-  color: black;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.view-btn:hover {
-  transform: scale(1.05);
-}
-
-.compare-btn {
-  margin-top: 10px;
-  padding: 9px 16px;
-  border-radius: 10px;
-  border: 1px solid #00ffcc;
-  background: transparent;
-  color: #00ffcc;
-  cursor: pointer;
-}
-
-.compare-btn.active {
-  background: #00ffcc;
-  color: black;
-  border: none;
-}
-
-.compare-btn.disabled {
-  background: #333;
-  color: #888;
-  border: none;
-  cursor: not-allowed;
-}
-
-/* BAR */
-.compare-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  padding: 15px 25px;
-  border-radius: 12px;
-  display: flex;
-  gap: 20px;
-}
-
-/* MODAL */
+/* =========================
+   COMPARE MODAL
+========================= */
 .compare-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.compare-box {
-  width: 80%;
-  max-width: 900px;
-  background: #0b0f19;
-  padding: 30px;
-  border-radius: 20px;
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: red;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.compare-cars {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.compare-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.winner {
-  display: inline-block;
-  margin-top: 5px;
-  padding: 4px 10px;
-  background: #00ffcc;
-  color: black;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-.compare-table {
-  margin-top: 25px;
-}
-
-.compare-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 12px;
-  border-bottom: 1px solid #222;
-}
-
-.better {
-  color: #00ffcc;
-  font-weight: bold;
-}
-/* BAR */
-.compare-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111;
-  padding: 15px 25px;
-  border-radius: 12px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-/* MODAL */
-.compare-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -642,61 +452,44 @@
   cursor: pointer;
 }
 
-/* TOP CAR CARDS */
-.compare-cars {
+/* GRID */
+.compare-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.compare-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* WINNER BADGE */
-.winner {
-  margin-top: 5px;
-  display: inline-block;
-  padding: 4px 10px;
-  background: #00ffcc;
-  color: black;
-  font-size: 12px;
-  border-radius: 20px;
-}
-
-/* COMPARE TABLE IMPROVED */
-.compare-table {
-  margin-top: 25px;
-  border-top: 1px solid #333;
-}
-
-.compare-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 14px 10px;
-  border-bottom: 1px solid #222;
-  align-items: center;
-}
-
-.compare-row span:first-child {
-  opacity: 0.6;
-}
-
-/* BETTER VALUE */
-.better {
-  color: #00ffcc;
-  font-weight: bold;
-}
-
-/* CAR CARD FIX */
-.compare-card {
-  text-align: center;
-}
-
-.compare-card img {
+.compare-grid img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
 }
+
+/* WINNER */
+.winner {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 4px 10px;
+  background: #00ffcc;
+  color: black;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* TABLE */
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12px;
+  border-bottom: 1px solid #222;
+}
+
+.better {
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+
+
+
