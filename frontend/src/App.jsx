@@ -98,7 +98,12 @@ function App() {
   const [budget, setBudget] = useState("");
 const [fuelType, setFuelType] = useState("");
 const [recommendedCars, setRecommendedCars] = useState([]);
-
+const [search, setSearch] = useState("");
+const filteredCars = featuredCars.filter((car) =>
+  car.name.toLowerCase().includes(
+    search.toLowerCase()
+  )
+);
 const recommendCars = () => {
   const filtered = featuredCars.filter((car) => {
 
@@ -183,10 +188,17 @@ const recommendCars = () => {
         <div className="section-header">
           <h2>🔥 Featured Cars</h2>
           <p>Explore premium luxury and sports cars</p>
+          <input
+  type="text"
+  placeholder="🔍 Search cars..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="search-bar"
+/>
         </div>
 
         <div className="car-grid">
-          {featuredCars.map((car) => (
+          {filteredCars.map((car) => (
             <div className="car-card" key={car.id}>
 
               <div className="car-image-wrapper">
@@ -317,6 +329,28 @@ const recommendCars = () => {
 
   )}
 
+</section>
+
+<section className="stats-section">
+  <div className="stat-card">
+    <h2>500+</h2>
+    <p>Luxury Cars</p>
+  </div>
+
+  <div className="stat-card">
+    <h2>10K+</h2>
+    <p>Happy Users</p>
+  </div>
+
+  <div className="stat-card">
+    <h2>50+</h2>
+    <p>Brands</p>
+  </div>
+
+  <div className="stat-card">
+    <h2>99%</h2>
+    <p>Satisfaction</p>
+  </div>
 </section>
 
       {/* CALCULATOR */}
