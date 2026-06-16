@@ -52,6 +52,32 @@ const featuredCars = [
       "https://images.unsplash.com/photo-1553440569-bcc63803a83d",
   },
 ];
+const trendingCars = [
+  {
+    id: 1,
+    rank: "#1",
+    name: "Ferrari SF90",
+    price: "₹7.5 Cr",
+    image:
+      "https://images.hdqwalls.com/wallpapers/bthumb/novitec-ferrari-sf90-xx-stradale-aerodynamic-hybrid-supercar-oe.jpg"
+  },
+  {
+    id: 2,
+    rank: "#2",
+    name: "Porsche 911 Turbo",
+    price: "₹3.3 Cr",
+    image:
+      "https://i.ytimg.com/vi/LfonoA3PGao/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAP-z6JfRTyx7zfatzgUEYm_WZmfw"
+  },
+  {
+    id: 3,
+    rank: "#3",
+    name: "McLaren 720S",
+    price: "₹4.8 Cr",
+    image:
+      "https://images5.alphacoders.com/128/1284109.jpg"
+  }
+];
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -244,6 +270,49 @@ const recommendCars = () => {
           ))}
         </div>
       </section>
+
+      {/* TRENDING CARS */}
+
+<section className="trending">
+
+  <div className="section-header">
+    <h2>🔥 Trending This Week</h2>
+    <p>Most viewed luxury cars on DriveGenie</p>
+  </div>
+
+  <div className="trending-grid">
+
+    {trendingCars.map((car) => (
+
+      <div
+        className="trending-card"
+        key={car.id}
+      >
+
+        <div className="trending-badge">
+          {car.rank}
+        </div>
+
+        <img
+          src={car.image}
+          alt={car.name}
+        />
+
+        <div className="trending-info">
+
+          <h3>{car.name}</h3>
+
+          <h2>{car.price}</h2>
+
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
 
       {/* AI RECOMMENDATION */}
 
