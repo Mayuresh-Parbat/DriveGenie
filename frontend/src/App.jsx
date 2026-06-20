@@ -21,6 +21,8 @@ const featuredCars = [
     price: "₹5.5 Cr",
     fuel: "Petrol",
     seats: "2 Seats",
+    topSpeed: "350 km/h",
+  horsepower: "770 HP",
     image:
       "https://images.unsplash.com/photo-1544636331-e26879cd4d9b",
   },
@@ -30,6 +32,8 @@ const featuredCars = [
     price: "₹8.9 Cr",
     fuel: "Luxury",
     seats: "4 Seats",
+    topSpeed: "350 km/h",
+  horsepower: "770 HP",
     image:
       "https://images.unsplash.com/photo-1494976388531-d1058494cdd8",
   },
@@ -39,6 +43,8 @@ const featuredCars = [
     price: "₹1.5 Cr",
     fuel: "Electric",
     seats: "5 Seats",
+    topSpeed: "350 km/h",
+  horsepower: "770 HP",
     image:
       "https://images.unsplash.com/photo-1617788138017-80ad40651399",
   },
@@ -48,6 +54,8 @@ const featuredCars = [
     price: "₹1.8 Cr",
     fuel: "Petrol",
     seats: "4 Seats",
+    topSpeed: "350 km/h",
+    horsepower: "770 HP",
     image:
       "https://images.unsplash.com/photo-1553440569-bcc63803a83d",
   },
@@ -124,6 +132,7 @@ function App() {
   const [budget, setBudget] = useState("");
 const [fuelType, setFuelType] = useState("");
 const [recommendedCars, setRecommendedCars] = useState([]);
+const [selectedCar, setSelectedCar] = useState(null);
 const [search, setSearch] = useState("");
 const filteredCars = featuredCars.filter((car) =>
   car.name.toLowerCase().includes(
@@ -261,9 +270,12 @@ const recommendCars = () => {
 
                 </div>
 
-                <button className="view-btn">
-                  View Details
-                </button>
+                <button
+  className="view-btn"
+  onClick={() => setSelectedCar(car)}
+>
+  View Details
+</button>
               </div>
 
             </div>
@@ -530,7 +542,53 @@ const recommendCars = () => {
           <img src="https://www.pngarts.com/files/12/Aston-Martin-Silver-Car-Transparent-Image.png" />
         </div>
 
-      </section>
+            </section>
+
+      {selectedCar && (
+        <div
+          className="modal-overlay"
+          onClick={() => setSelectedCar(null)}
+        >
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedCar.image}
+              alt={selectedCar.name}
+            />
+
+            <h2>{selectedCar.name}</h2>
+
+            <p>
+              <strong>Price:</strong> {selectedCar.price}
+            </p>
+
+            <p>
+              <strong>Fuel:</strong> {selectedCar.fuel}
+            </p>
+
+            <p>
+              <strong>Seats:</strong> {selectedCar.seats}
+            </p>
+
+            <p>
+              <strong>Top Speed:</strong> {selectedCar.topSpeed}
+            </p>
+
+            <p>
+              <strong>Horsepower:</strong> {selectedCar.horsepower}
+            </p>
+
+            <button
+              className="close-btn"
+              onClick={() => setSelectedCar(null)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
     </div>
   );
