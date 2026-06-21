@@ -132,6 +132,7 @@ function App() {
   const [budget, setBudget] = useState("");
 const [fuelType, setFuelType] = useState("");
 const [recommendedCars, setRecommendedCars] = useState([]);
+const [compareCars, setCompareCars] = useState([]);
 const [selectedCar, setSelectedCar] = useState(null);
 const [search, setSearch] = useState("");
 const filteredCars = featuredCars.filter((car) =>
@@ -139,6 +140,27 @@ const filteredCars = featuredCars.filter((car) =>
     search.toLowerCase()
   )
 );
+const handleCompare = (car) => {
+  const exists = compareCars.find(
+    (item) => item.id === car.id
+  );
+
+  if (exists) {
+    setCompareCars(
+      compareCars.filter(
+        (item) => item.id !== car.id
+      )
+    );
+    return;
+  }
+
+  if (compareCars.length >= 2) {
+    alert("You can compare only 2 cars");
+    return;
+  }
+
+  setCompareCars([...compareCars, car]);
+};
 const recommendCars = () => {
   const filtered = featuredCars.filter((car) => {
 
@@ -270,11 +292,22 @@ const recommendCars = () => {
 
                 </div>
 
-                <button
+  <button
   className="view-btn"
   onClick={() => setSelectedCar(car)}
 >
   View Details
+</button>
+
+<button
+  className="compare-btn"
+  onClick={() => handleCompare(car)}
+>
+  {compareCars.find(
+    (item) => item.id === car.id
+  )
+    ? "✓ Selected"
+    : "⚖ Compare"}
 </button>
               </div>
 
@@ -433,6 +466,70 @@ const recommendCars = () => {
     <p>Satisfaction</p>
   </div>
 </section>
+
+{compareCars.length > 0 && (
+
+<section className="compare-section">
+
+  <div className="section-header">
+    <h2>⚖ Compare Cars</h2>
+    <p>Side by side luxury car comparison</p>
+  </div>
+
+  <div className="compare-grid">
+
+    {compareCars.map((car) => (
+
+      <div
+        className="compare-card"
+        key={car.id}
+      >
+
+        <img
+          src={car.image}
+          alt={car.name}
+        />
+
+        <div className="compare-info">
+
+          <h3>{car.name}</h3>
+
+          <div className="compare-row">
+            <span>Price</span>
+            <strong>{car.price}</strong>
+          </div>
+
+          <div className="compare-row">
+            <span>Fuel</span>
+            <strong>{car.fuel}</strong>
+          </div>
+
+          <div className="compare-row">
+            <span>Seats</span>
+            <strong>{car.seats}</strong>
+          </div>
+
+          <div className="compare-row">
+            <span>Top Speed</span>
+            <strong>{car.topSpeed}</strong>
+          </div>
+
+          <div className="compare-row">
+            <span>Horsepower</span>
+            <strong>{car.horsepower}</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
+
+)}
 
       {/* CALCULATOR */}
       <section className="calculator">
