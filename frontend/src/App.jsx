@@ -23,6 +23,7 @@ const featuredCars = [
     seats: "2 Seats",
     topSpeed: "350 km/h",
   horsepower: "770 HP",
+    rating: 4.8,
     image:
       "https://images.unsplash.com/photo-1544636331-e26879cd4d9b",
   },
@@ -34,6 +35,7 @@ const featuredCars = [
     seats: "4 Seats",
     topSpeed: "350 km/h",
   horsepower: "770 HP",
+    rating: 4.8,
     image:
       "https://images.unsplash.com/photo-1494976388531-d1058494cdd8",
   },
@@ -45,6 +47,7 @@ const featuredCars = [
     seats: "5 Seats",
     topSpeed: "350 km/h",
   horsepower: "770 HP",
+    rating: 4.8,
     image:
       "https://images.unsplash.com/photo-1617788138017-80ad40651399",
   },
@@ -56,6 +59,7 @@ const featuredCars = [
     seats: "4 Seats",
     topSpeed: "350 km/h",
     horsepower: "770 HP",
+      rating: 4.8,
     image:
       "https://images.unsplash.com/photo-1553440569-bcc63803a83d",
   },
@@ -316,6 +320,59 @@ const recommendCars = () => {
         </div>
       </section>
 
+
+      {compareCars.length > 0 && (
+  
+  <section className="compare-section">
+    <div className="section-header">
+      <h2>⚖ Compare Cars</h2>
+      <p>Side by side luxury car comparison</p>
+    </div>
+
+    <div className="compare-grid">
+      {compareCars.map((car) => (
+        <div className="compare-card" key={car.id}>
+          <img src={car.image} alt={car.name} />
+
+          <div className="compare-info">
+            <h3>{car.name}</h3>
+
+<div className="compare-row">
+  <span>Rating</span>
+  <strong>⭐ {car.rating}</strong>
+</div>
+
+<div className="compare-row">
+  <span>Price</span>
+  <strong>{car.price}</strong>
+</div>
+
+            <div className="compare-row">
+              <span>Fuel</span>
+              <strong>{car.fuel}</strong>
+            </div>
+
+            <div className="compare-row">
+              <span>Seats</span>
+              <strong>{car.seats}</strong>
+            </div>
+
+            <div className="compare-row">
+              <span>Top Speed</span>
+              <strong>{car.topSpeed}</strong>
+            </div>
+
+            <div className="compare-row">
+              <span>Horsepower</span>
+              <strong>{car.horsepower}</strong>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
+
       {/* TRENDING CARS */}
 
 <section className="trending">
@@ -445,91 +502,6 @@ const recommendCars = () => {
 
 </section>
 
-<section className="stats-section">
-  <div className="stat-card">
-    <h2>500+</h2>
-    <p>Luxury Cars</p>
-  </div>
-
-  <div className="stat-card">
-    <h2>10K+</h2>
-    <p>Happy Users</p>
-  </div>
-
-  <div className="stat-card">
-    <h2>50+</h2>
-    <p>Brands</p>
-  </div>
-
-  <div className="stat-card">
-    <h2>99%</h2>
-    <p>Satisfaction</p>
-  </div>
-</section>
-
-{compareCars.length > 0 && (
-
-<section className="compare-section">
-
-  <div className="section-header">
-    <h2>⚖ Compare Cars</h2>
-    <p>Side by side luxury car comparison</p>
-  </div>
-
-  <div className="compare-grid">
-
-    {compareCars.map((car) => (
-
-      <div
-        className="compare-card"
-        key={car.id}
-      >
-
-        <img
-          src={car.image}
-          alt={car.name}
-        />
-
-        <div className="compare-info">
-
-          <h3>{car.name}</h3>
-
-          <div className="compare-row">
-            <span>Price</span>
-            <strong>{car.price}</strong>
-          </div>
-
-          <div className="compare-row">
-            <span>Fuel</span>
-            <strong>{car.fuel}</strong>
-          </div>
-
-          <div className="compare-row">
-            <span>Seats</span>
-            <strong>{car.seats}</strong>
-          </div>
-
-          <div className="compare-row">
-            <span>Top Speed</span>
-            <strong>{car.topSpeed}</strong>
-          </div>
-
-          <div className="compare-row">
-            <span>Horsepower</span>
-            <strong>{car.horsepower}</strong>
-          </div>
-
-        </div>
-
-      </div>
-
-    ))}
-
-  </div>
-
-</section>
-
-)}
 
       {/* CALCULATOR */}
       <section className="calculator">
