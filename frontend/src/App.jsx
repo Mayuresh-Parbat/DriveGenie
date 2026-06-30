@@ -137,6 +137,7 @@ function App() {
 const [fuelType, setFuelType] = useState("");
 const [recommendedCars, setRecommendedCars] = useState([]);
 const [compareCars, setCompareCars] = useState([]);
+const [favorites, setFavorites] = useState([]);
 const [selectedCar, setSelectedCar] = useState(null);
 const [search, setSearch] = useState("");
 const filteredCars = featuredCars.filter((car) =>
@@ -148,6 +149,22 @@ const handleCompare = (car) => {
   const exists = compareCars.find(
     (item) => item.id === car.id
   );
+
+const toggleFavorite = (car) => {
+  const exists = favorites.find(
+    (item) => item.id === car.id
+  );
+
+  if (exists) {
+    setFavorites(
+      favorites.filter(
+        (item) => item.id !== car.id
+      )
+    );
+  } else {
+    setFavorites([...favorites, car]);
+  }
+};
 
   if (exists) {
     setCompareCars(
@@ -265,16 +282,16 @@ const recommendCars = () => {
               <div className="car-image-wrapper">
                 <img src={car.image} alt={car.name} />
 
-                <button
-                  className="wishlist-btn"
-                  onClick={() => toggleWishlist(car.id)}
-                >
-                  {wishlist.includes(car.id) ? (
-                    <FaHeart />
-                  ) : (
-                    <FaRegHeart />
-                  )}
-                </button>
+<button
+  className="wishlist-btn"
+  onClick={() => toggleFavorite(car)}
+>
+  {favorites.find(
+    (item) => item.id === car.id
+  )
+    ? "❤️"
+    : "🤍"}
+</button>
               </div>
 
               <div className="car-info">
@@ -371,6 +388,64 @@ const recommendCars = () => {
       ))}
     </div>
   </section>
+)}
+
+
+{favorites.length > 0 && (
+
+<section className="favorite-section">
+
+  <div className="section-header">
+    <h2>❤️ My Favorite Cars</h2>
+    <p>Your saved dream cars</p>
+  </div>
+
+  <div className="featured-grid">
+
+    {favorites.map((car) => (
+
+      <div
+        className="car-card"
+        key={car.id}
+      >
+
+        <img
+          src={car.image}
+          alt={car.name}
+        />
+
+        <div className="car-info">
+
+          <h3>{car.name}</h3>
+
+          <p className="car-rating">
+            ⭐ {car.rating}
+          </p>
+
+          <h2>{car.price}</h2>
+
+          <div className="car-meta">
+
+            <span>
+              {car.fuel}
+            </span>
+
+            <span>
+              {car.seats}
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
+
 )}
 
       {/* TRENDING CARS */}

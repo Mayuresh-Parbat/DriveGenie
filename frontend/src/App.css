@@ -922,3 +922,16 @@ select {
   justify-content: space-between;
   padding: 10px 0;
 }
+
+
+.favorite-section {
+  padding: 80px 60px;
+}
+
+.favorite-section h2 {
+  margin-bottom: 10px;
+}
+
+.favorite-section p {
+  opacity: 0.8;
+}
