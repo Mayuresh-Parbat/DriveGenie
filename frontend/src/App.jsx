@@ -93,6 +93,7 @@ const trendingCars = [
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  const [currentTime, setCurrentTime] = useState("");
   const [index, setIndex] = useState(0);
   const [wishlist, setWishlist] = useState([]);
 
@@ -109,7 +110,21 @@ function App() {
     const saved = JSON.parse(localStorage.getItem("wishlist")) || [];
     setWishlist(saved);
   }, []);
+useEffect(() => {
+  const timer = setInterval(() => {
+    const now = new Date();
 
+    setCurrentTime(
+      now.toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+    );
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);
   useEffect(() => {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);
@@ -138,6 +153,7 @@ const [fuelType, setFuelType] = useState("");
 const [recommendedCars, setRecommendedCars] = useState([]);
 const [compareCars, setCompareCars] = useState([]);
 const [favorites, setFavorites] = useState([]);
+const [recentCars, setRecentCars] = useState([]);
 const [selectedCar, setSelectedCar] = useState(null);
 const [search, setSearch] = useState("");
 const filteredCars = featuredCars.filter((car) =>
@@ -154,7 +170,20 @@ const toggleFavorite = (car) => {
   const exists = favorites.find(
     (item) => item.id === car.id
   );
+const addToRecent = (car) => {
+  const exists = recentCars.find(
+    (item) => item.id === car.id
+  );
 
+  if (exists) {
+    setRecentCars([
+      car,
+      ...recentCars.filter((item) => item.id !== car.id),
+    ]);
+  } else {
+    setRecentCars([car, ...recentCars]);
+  }
+};
   if (exists) {
     setFavorites(
       favorites.filter(
@@ -237,10 +266,19 @@ const recommendCars = () => {
         <h1 className="logo">DriveGenie</h1>
 
         <div className="nav-right">
-          <button onClick={toggleTheme} className="theme-btn">
-            {theme === "dark" ? "Light" : "Dark"}
-          </button>
-        </div>
+
+  <div className="live-clock">
+    🕒 {currentTime}
+  </div>
+
+  <button
+    onClick={toggleTheme}
+    className="theme-btn"
+  >
+    {theme === "dark" ? "Light" : "Dark"}
+  </button>
+
+</div>
       </nav>
 
       {/* HERO */}
@@ -315,11 +353,13 @@ const recommendCars = () => {
 
   <button
   className="view-btn"
-  onClick={() => setSelectedCar(car)}
+  onClick={() => {
+    setSelectedCar(car);
+    addToRecent(car);
+  }}
 >
   View Details
 </button>
-
 <button
   className="compare-btn"
   onClick={() => handleCompare(car)}
@@ -389,7 +429,50 @@ const recommendCars = () => {
     </div>
   </section>
 )}
+{recentCars.length > 0 && (
+  <section className="recent-section">
 
+    <div className="section-header">
+      <h2>🕒 Recently Viewed</h2>
+      <p>Your recently explored cars</p>
+    </div>
+
+    <div className="featured-grid">
+
+      {recentCars.map((car) => (
+
+        <div className="car-card" key={car.id}>
+
+          <img
+            src={car.image}
+            alt={car.name}
+          />
+
+          <div className="car-info">
+
+            <h3>{car.name}</h3>
+
+            <p className="car-rating">
+              ⭐ {car.rating}
+            </p>
+
+            <h2>{car.price}</h2>
+
+            <div className="car-meta">
+              <span>{car.fuel}</span>
+              <span>{car.seats}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </section>
+)}
 
 {favorites.length > 0 && (
 

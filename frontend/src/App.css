@@ -27,13 +27,31 @@
   font-weight: bold;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.live-clock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1f2430;
+  color: #7ef5d3;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
 .theme-btn {
+  padding: 12px 20px;
   border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   background: #00ffcc;
   color: black;
+  font-weight: 600;
 }
 
 /* =========================
@@ -130,21 +148,16 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 60px;
 }
+
 
 .logo {
   color: #00ffcc;
 }
 
-.theme-btn {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #00ffcc;
-  color: black;
-}
+
 
 /* CALCULATOR */
 .calculator {
@@ -934,4 +947,27 @@ select {
 
 .favorite-section p {
   opacity: 0.8;
+}
+
+
+
+.recent-section {
+  padding: 80px 60px;
+}
+
+.recent-section h2 {
+  margin-bottom: 10px;
+}
+
+.recent-section p {
+  opacity: 0.8;
+}
+
+.live-clock{
+    background:#1f2430;
+    padding:12px 18px;
+    border-radius:14px;
+    color:#7ef5d3;
+    font-weight:700;
+    font-size:18px;
 }
