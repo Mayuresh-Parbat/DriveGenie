@@ -267,6 +267,10 @@ const recommendCars = () => {
 
         <div className="nav-right">
 
+  <div className="wishlist-counter">
+    ❤️ {favorites.length}
+  </div>
+
   <div className="live-clock">
     🕒 {currentTime}
   </div>
