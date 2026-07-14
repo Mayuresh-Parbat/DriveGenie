@@ -1058,3 +1058,32 @@ select {
 }
 
 }
+
+
+/* VERIFIED DEALER */
+
+.verified-badge{
+    display:inline-block;
+    margin:8px 0 15px;
+    padding:6px 12px;
+    background:#00ffcc;
+    color:#111;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+/* NEW ARRIVAL BADGE */
+
+.new-badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#ff3b30;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+    z-index:10;
+    letter-spacing:1px;
+}

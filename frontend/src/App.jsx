@@ -322,6 +322,9 @@ const recommendCars = () => {
             <div className="car-card" key={car.id}>
 
               <div className="car-image-wrapper">
+                <div className="new-badge">
+  NEW
+</div>
                 <img src={car.image} alt={car.name} />
 
 <button
@@ -396,8 +399,11 @@ const recommendCars = () => {
           <img src={car.image} alt={car.name} />
 
           <div className="compare-info">
-            <h3>{car.name}</h3>
+          <h3>{car.name}</h3>
 
+<div className="verified-badge">
+  ✔ Verified Dealer
+</div>
 <div className="compare-row">
   <span>Rating</span>
   <strong>⭐ {car.rating}</strong>
