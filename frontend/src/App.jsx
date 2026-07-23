@@ -368,6 +368,21 @@ const recommendCars = () => {
   View Details
 </button>
 <button
+  className="share-btn"
+  onClick={() => {
+    navigator.clipboard.writeText(
+      `Car: ${car.name}
+Price: ${car.price}
+Fuel: ${car.fuel}
+Seats: ${car.seats}`
+    );
+
+    alert("Car details copied!");
+  }}
+>
+  📋 Copy Details
+</button>
+<button
   className="compare-btn"
   onClick={() => handleCompare(car)}
 >
@@ -488,10 +503,21 @@ const recommendCars = () => {
 
 <section className="favorite-section">
 
-  <div className="section-header">
+<div className="favorite-header">
+
+  <div>
     <h2>❤️ My Favorite Cars</h2>
     <p>Your saved dream cars</p>
   </div>
+
+  <button
+    className="clear-btn"
+    onClick={() => setFavorites([])}
+  >
+    Clear Wishlist
+  </button>
+
+</div>
 
   <div className="featured-grid">
 

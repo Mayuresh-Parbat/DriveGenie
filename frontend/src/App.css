@@ -1087,3 +1087,59 @@ select {
     z-index:10;
     letter-spacing:1px;
 }
+
+
+
+
+
+
+.favorite-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.clear-btn{
+    background:#ff3b30;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.clear-btn:hover{
+    background:#d92b20;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.share-btn{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.share-btn:hover{
+    background:#0056b3;
+}
