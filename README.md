@@ -92,17 +92,4 @@ DriveGenie is a modern **AI-powered car marketplace** designed to help users dis
 
 ---
 
-## ⚙️ Installation & Setup
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/drivegenie.git
-
-# Navigate to project folder
-cd drivegenie
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
