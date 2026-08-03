@@ -879,7 +879,7 @@ Seats: ${car.seats}`
 
       <p>📧 support@drivegenie.com</p>
       <p>📍 Pune, Maharashtra</p>
-      <p>📞 +91 9000000000</p>
+      <p>📞 +91 9898989898</p>
     </div>
 
     <div className="footer-section">
