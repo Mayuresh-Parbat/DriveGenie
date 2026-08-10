@@ -896,6 +896,7 @@ Seats: ${car.seats}`
 
   <div className="footer-bottom">
     © 2026 DriveGenie. All Rights Reserved.
+🚗 Last Updated: August 2026
   </div>
 
 </footer>
