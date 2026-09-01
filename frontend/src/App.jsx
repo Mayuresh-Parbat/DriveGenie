@@ -136,6 +136,16 @@ useEffect(() => {
 
     return () => clearInterval(interval);
   }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    setShowTop(window.scrollY > 400);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -155,6 +165,7 @@ const [compareCars, setCompareCars] = useState([]);
 const [favorites, setFavorites] = useState([]);
 const [recentCars, setRecentCars] = useState([]);
 const [selectedCar, setSelectedCar] = useState(null);
+const [showTop, setShowTop] = useState(false);
 const [search, setSearch] = useState("");
 const filteredCars = featuredCars.filter((car) =>
   car.name.toLowerCase().includes(
@@ -852,6 +863,21 @@ Seats: ${car.seats}`
           </div>
         </div>
       )}
+
+{showTop && (
+  <button
+    className="back-to-top"
+    onClick={() =>
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
+  >
+    ↑
+  </button>
+)}
+
 <footer className="footer">
 
   <div className="footer-container">

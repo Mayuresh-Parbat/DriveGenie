@@ -1143,3 +1143,27 @@ select {
 .share-btn:hover{
     background:#0056b3;
 }
+
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: #00ffcc;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,255,204,.4);
+  transition: .3s;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  background: #4facfe;
+}
