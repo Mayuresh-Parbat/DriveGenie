@@ -1,96 +1,88 @@
-# 🚗 DriveGenie – AI Car Marketplace
+# 🚗 DriveGenie — Luxury Car Discovery Platform
 
-DriveGenie is a modern **AI-powered car marketplace** designed to help users discover, filter, and explore cars with a premium user experience similar to platforms like CarDekho, Cars24, and Spinny.
+DriveGenie is a responsive React web application for discovering, comparing, and exploring premium cars. It provides a polished marketplace-style experience with car search, wishlist management, AI-style recommendations, price comparison, and an EMI calculator.
 
----
+## ✨ Key Features
 
-## 🚀 Features
+- Dark and light theme toggle
+- Auto-changing luxury-car hero carousel
+- Live clock in the navigation bar
+- Search featured cars instantly by name
+- Add or remove cars from a personal wishlist
+- Compare up to two cars side by side
+- View detailed specifications in a modal
+- Copy car details directly to the clipboard
+- Recently viewed cars section
+- Trending luxury cars section
+- Preference-based car recommendations using budget and fuel type
+- EMI calculator with:
+  - Car price
+  - Down payment
+  - Interest rate
+  - Loan duration
+  - Monthly EMI, total interest, and total repayment
+- Smooth “back to top” button
+- Fully responsive premium UI
 
-### 🎯 Core UI
-- Modern and fully responsive design  
-- Dark / Light theme support  
-- Hero section with integrated search bar  
-- Glassmorphism-based UI for a premium look  
+## 🛠️ Tech Stack
 
----
+- React.js
+- Vite
+- JavaScript (ES6+)
+- CSS3
+- React Icons
+- Browser Local Storage
+- Clipboard API
 
-### 🔍 Browse by Type
-- Multiple car categories:
-  - Electric
-  - Sedan
-  - SUV
-  - Coupe  
-- Interactive category cards  
-- Click-to-filter functionality  
+## 📂 Project Structure
 
----
+```text
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── FeaturedCars.jsx
+│   ├── CarComparison.jsx
+│   ├── CarCollections.jsx
+│   ├── TrendingCars.jsx
+│   ├── Recommendation.jsx
+│   ├── Calculator.jsx
+│   ├── CarModal.jsx
+│   ├── BackToTop.jsx
+│   └── Footer.jsx
+├── data/
+│   └── cars.js
+├── App.jsx
+├── App.css
+└── main.jsx
+```
 
-### ⚡ Smart Filtering System
-- Instant filtering based on selected category  
-- Dynamic rendering using React state  
-- Active category highlighting  
+## 🚀 Run Locally
 
----
+```bash
+git clone <your-repository-link>
+cd drivegenie
+npm install
+npm run dev
+```
 
-### 🚗 Featured Cars Section
-- Premium grid layout  
-- Multiple car listings with images and pricing  
-- Smooth hover animations  
+Open the local URL shown in the terminal, usually:
 
----
+```text
+http://localhost:5173
+```
 
-### ❤️ Wishlist System
-- Add / Remove cars from wishlist  
-- Real-time UI updates  
-- Interactive wishlist icon  
+## 🔮 Future Improvements
 
----
+- Backend API using Node.js and Express
+- MongoDB database for car listings and user data
+- User login and personal profiles
+- Persistent cloud-based wishlist
+- Advanced filters for brand, budget, fuel type, and seating capacity
+- Real AI recommendation engine
+- Dealer dashboard for adding and managing listings
+- Deployment with a live production URL
 
-### 🧮 Financing Calculator
-- EMI calculation interface  
-- Inputs:
-  - Car price  
-  - Interest rate  
-  - Loan duration  
-- Real-time EMI results display  
+## 👤 Author
 
----
-
-## 🛠 Tech Stack
-
-### Frontend
-- React.js (Vite)  
-- CSS3 (Custom styling + Glassmorphism UI)  
-
-### Backend *(Planned)*
-- Node.js  
-- Express.js  
-
-### AI *(Planned)*
-- Python (Recommendation Engine)  
-
-### Database *(Planned)*
-- MongoDB  
-
----
-
-## 📌 Project Status
-
-🚧 Currently in **frontend development phase**  
-🔜 Backend, AI integration, and database implementation planned  
-
----
-
-## 💡 Future Enhancements
-
-- AI-based car recommendation system  
-- Advanced filtering (price range, fuel type, brand)  
-- User authentication & profiles  
-- Saved searches & personalized dashboard  
-- Backend API integration  
-- Deployment (Cloud hosting)  
-
----
-Author:
-Mayuresh Parbat ! 
-
+**Mayuresh Parbat**
