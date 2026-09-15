@@ -1,0 +1,89 @@
+.about-page {
+  min-height: 70vh;
+  padding: 70px 8%;
+  color: var(--text-color, #f5f5f5);
+}
+
+.about-hero {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.about-tag {
+  color: #8b9cff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.about-hero h1 {
+  margin: 18px 0;
+  font-size: clamp(2.3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.about-hero h1 span {
+  color: #8b9cff;
+}
+
+.about-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #aeb4c2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-card {
+  padding: 30px;
+  border: 1px solid rgba(139, 156, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.about-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.about-card p,
+.about-card li {
+  color: #aeb4c2;
+  line-height: 1.8;
+}
+
+.about-card ul {
+  padding-left: 20px;
+}
+
+.about-bottom {
+  margin: 55px auto 0;
+  text-align: center;
+}
+
+.about-bottom p {
+  color: #aeb4c2;
+}
+
+@media (max-width: 700px) {
+  .about-page {
+    padding: 45px 6%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+}
