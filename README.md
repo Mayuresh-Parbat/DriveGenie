@@ -59,13 +59,6 @@ src/
 
 ## 🚀 Run Locally
 
-```bash
-git clone <your-repository-link>
-cd drivegenie
-npm install
-npm run dev
-```
-
 Open the local URL shown in the terminal, usually:
 
 ```text
