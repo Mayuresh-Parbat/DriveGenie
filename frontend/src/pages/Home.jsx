@@ -15,4 +15,43 @@ function Home({
   onViewDetails,
   onClearFavorites,
 }) {
-  
+  return (
+    <>
+      <section id="home">
+        <Hero />
+      </section>
+
+      <div id="browse-cars">
+        <FeaturedCars
+          favorites={favorites}
+          compareCars={compareCars}
+          onToggleFavorite={onToggleFavorite}
+          onCompare={onCompare}
+          onViewDetails={onViewDetails}
+        />
+      </div>
+
+      <div id="compare">
+        <CarComparison compareCars={compareCars} />
+      </div>
+
+      <CarCollections
+        recentCars={recentCars}
+        favorites={favorites}
+        onClearFavorites={onClearFavorites}
+      />
+
+      <TrendingCars />
+
+      <div id="recommendation">
+        <Recommendation />
+      </div>
+
+      <div id="calculator">
+        <Calculator />
+      </div>
+    </>
+  );
+}
+
+export default Home;
