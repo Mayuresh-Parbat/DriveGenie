@@ -1688,3 +1688,42 @@ select {
   gap: 14px;
   margin: 28px 0;
 }
+
+.spec-card {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 5px 10px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #171b28;
+}
+
+.spec-card svg {
+  grid-row: span 2;
+  align-self: center;
+  color: #71f0ca;
+  font-size: 1.2rem;
+}
+
+.spec-card span {
+  color: #aeb6c7;
+  font-size: 0.85rem;
+}
+
+.spec-card strong {
+  color: #ffffff;
+}
+
+.details-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.details-actions button {
+  flex: 1;
+}
+
+.similar-cars-section {
+  margin-top: 75px;
+}
+
