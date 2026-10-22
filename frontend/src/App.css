@@ -1762,3 +1762,53 @@ select {
 .similar-car-card h3 {
   margin: 0 0 8px;
 }
+
+
+.similar-car-card p {
+  margin: 0;
+  color: #71f0ca;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.car-not-found {
+  min-height: 50vh;
+  padding: 100px 5%;
+  text-align: center;
+}
+
+.light .details-image-box,
+.light .details-wishlist-btn,
+.light .spec-card,
+.light .similar-car-card {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(20, 30, 60, 0.08);
+}
+
+.light .spec-card strong {
+  color: #182230;
+}
+
+@media (max-width: 850px) {
+  .car-details-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .similar-cars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-actions {
+    flex-direction: column;
+  }
+
+  .details-image-box img {
+    min-height: 280px;
+  }
+}
