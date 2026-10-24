@@ -31,5 +31,17 @@ function App() {
       currentTheme === "dark" ? "light" : "dark"
     );
   };
+  const toggleFavorite = (car) => {
+    const exists = favorites.some((item) => item.id === car.id);
+
+    if (exists) {
+      setFavorites(favorites.filter((item) => item.id !== car.id));
+      return;
+    }
+
+    setFavorites([...favorites, car]);
+  };
+
+  
 
   
