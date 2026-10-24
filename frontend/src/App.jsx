@@ -16,4 +16,20 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [recentCars, setRecentCars] = useState([]);
   const [showTop, setShowTop] = useState(false);
+    useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 400);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark"
+    );
+  };
+
+  
