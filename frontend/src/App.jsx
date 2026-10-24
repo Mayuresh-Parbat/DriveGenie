@@ -42,6 +42,19 @@ function App() {
     setFavorites([...favorites, car]);
   };
 
+  const addToRecent = (car) => {
+    const exists = recentCars.some((item) => item.id === car.id);
+
+    if (exists) {
+      setRecentCars([
+        car,
+        ...recentCars.filter((item) => item.id !== car.id),
+      ]);
+      return;
+    }
+
+
+
   
 
   
