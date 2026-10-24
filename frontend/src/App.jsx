@@ -85,6 +85,21 @@ function App() {
         favoritesCount={favorites.length}
         onToggleTheme={toggleTheme}
       />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              favorites={favorites}
+              compareCars={compareCars}
+              recentCars={recentCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onViewDetails={handleViewDetails}
+              onClearFavorites={() => setFavorites([])}
+            />
+          }
+        />
 
 
   
