@@ -1593,7 +1593,10 @@ select {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
 .car-details-page {
   width: min(1280px, 90%);
   min-height: 70vh;
@@ -1764,6 +1767,10 @@ select {
   margin: 0 0 8px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
 .similar-car-card p {
   margin: 0;
   color: #71f0ca;
@@ -1811,4 +1818,8 @@ select {
   .details-image-box img {
     min-height: 280px;
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f

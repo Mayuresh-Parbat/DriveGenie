@@ -16,8 +16,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [recentCars, setRecentCars] = useState([]);
   const [showTop, setShowTop] = useState(false);
-
-  useEffect(() => {
+    useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 400);
     };
@@ -32,7 +31,6 @@ function App() {
       currentTheme === "dark" ? "light" : "dark"
     );
   };
-
   const toggleFavorite = (car) => {
     const exists = favorites.some((item) => item.id === car.id);
 
@@ -87,7 +85,6 @@ function App() {
         favoritesCount={favorites.length}
         onToggleTheme={toggleTheme}
       />
-
       <Routes>
         <Route
           path="/"
@@ -104,6 +101,25 @@ function App() {
           }
         />
 
+<<<<<<< HEAD
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              favorites={favorites}
+              compareCars={compareCars}
+              recentCars={recentCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onViewDetails={handleViewDetails}
+              onClearFavorites={() => setFavorites([])}
+            />
+          }
+        />
+
+=======
+>>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
         <Route
           path="/cars/:carId"
           element={
@@ -125,3 +141,7 @@ function App() {
 }
 
 export default App;
+
+  
+
+  
