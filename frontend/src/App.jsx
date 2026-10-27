@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import FeaturedCars from "./components/FeaturedCars";
-import CarComparison from "./components/CarComparison";
-import CarCollections from "./components/CarCollections";
-import TrendingCars from "./components/TrendingCars";
-import Recommendation from "./components/Recommendation";
-import Calculator from "./components/Calculator";
-import CarModal from "./components/CarModal";
 import BackToTop from "./components/BackToTop";
 import Footer from "./components/Footer";
+import CarDetails from "./components/CarDetails";
+import Home from "./pages/Home";
 
 function App() {
+  const navigate = useNavigate();
+
   const [theme, setTheme] = useState("dark");
   const [compareCars, setCompareCars] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [recentCars, setRecentCars] = useState([]);
-  const [selectedCar, setSelectedCar] = useState(null);
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
@@ -63,8 +59,9 @@ function App() {
   };
 
   const handleViewDetails = (car) => {
-    setSelectedCar(car);
     addToRecent(car);
+    navigate(`/cars/${car.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleCompare = (car) => {
@@ -91,37 +88,37 @@ function App() {
         onToggleTheme={toggleTheme}
       />
 
-      <Hero />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              favorites={favorites}
+              compareCars={compareCars}
+              recentCars={recentCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onViewDetails={handleViewDetails}
+              onClearFavorites={() => setFavorites([])}
+            />
+          }
+        />
 
-      <FeaturedCars
-        favorites={favorites}
-        compareCars={compareCars}
-        onToggleFavorite={toggleFavorite}
-        onCompare={handleCompare}
-        onViewDetails={handleViewDetails}
-      />
-
-      <CarComparison compareCars={compareCars} />
-
-      <CarCollections
-        recentCars={recentCars}
-        favorites={favorites}
-        onClearFavorites={() => setFavorites([])}
-      />
-
-      <TrendingCars />
-
-      <Recommendation />
-
-      <Calculator />
-
-      <CarModal
-        selectedCar={selectedCar}
-        onClose={() => setSelectedCar(null)}
-      />
+        <Route
+          path="/cars/:carId"
+          element={
+            <CarDetails
+              favorites={favorites}
+              compareCars={compareCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onOpenCar={handleViewDetails}
+            />
+          }
+        />
+      </Routes>
 
       <BackToTop show={showTop} />
-
       <Footer />
     </div>
   );
