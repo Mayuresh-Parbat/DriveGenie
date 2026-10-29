@@ -1,0 +1,30 @@
+import { useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
+import BackToTop from "./components/BackToTop";
+import Footer from "./components/Footer";
+import CarDetails from "./components/CarDetails";
+import Home from "./pages/Home";
+import useLocalStorage from "./hooks/useLocalStorage";
+
+function App() {
+  const navigate = useNavigate();
+
+  const [theme, setTheme] = useLocalStorage("drivegenie-theme", "dark");
+
+  const [compareCars, setCompareCars] = useLocalStorage(
+    "drivegenie-compare-cars",
+    []
+  );
+
+  const [favorites, setFavorites] = useLocalStorage(
+    "drivegenie-favorites",
+    []
+  );
+
+  const [recentCars, setRecentCars] = useLocalStorage(
+    "drivegenie-recent-cars",
+    []
+  );
