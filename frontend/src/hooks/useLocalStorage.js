@@ -57,3 +57,23 @@ function App() {
 
     setFavorites([...favorites, car]);
   };
+
+  const addToRecent = (car) => {
+    const exists = recentCars.some((item) => item.id === car.id);
+
+    if (exists) {
+      setRecentCars([
+        car,
+        ...recentCars.filter((item) => item.id !== car.id),
+      ]);
+      return;
+    }
+
+    setRecentCars([car, ...recentCars]);
+  };
+
+  const handleViewDetails = (car) => {
+    addToRecent(car);
+    navigate(`/cars/${car.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
