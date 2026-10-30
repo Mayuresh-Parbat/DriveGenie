@@ -1,79 +1,25 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import "./App.css";
 
-import Navbar from "./components/Navbar";
-import BackToTop from "./components/BackToTop";
-import Footer from "./components/Footer";
-import CarDetails from "./components/CarDetails";
-import Home from "./pages/Home";
-import useLocalStorage from "./hooks/useLocalStorage";
+function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    try {
+      const savedValue = window.localStorage.getItem(key);
 
-function App() {
-  const navigate = useNavigate();
-
-  const [theme, setTheme] = useLocalStorage("drivegenie-theme", "dark");
-
-  const [compareCars, setCompareCars] = useLocalStorage(
-    "drivegenie-compare-cars",
-    []
-  );
-
-  const [favorites, setFavorites] = useLocalStorage(
-    "drivegenie-favorites",
-    []
-  );
-
-  const [recentCars, setRecentCars] = useLocalStorage(
-    "drivegenie-recent-cars",
-    []
-  );
-
-  const [showTop, setShowTop] = useState(false);
+      return savedValue ? JSON.parse(savedValue) : initialValue;
+    } catch {
+      return initialValue;
+    }
+  });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowTop(window.scrollY > 400);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme((currentTheme) =>
-      currentTheme === "dark" ? "light" : "dark"
-    );
-  };
-
-  const toggleFavorite = (car) => {
-    const exists = favorites.some((item) => item.id === car.id);
-
-    if (exists) {
-      setFavorites(favorites.filter((item) => item.id !== car.id));
-      return;
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      console.error(`Could not save ${key} to local storage.`);
     }
+  }, [key, value]);
 
-    setFavorites([...favorites, car]);
-  };
+  return [value, setValue];
+}
 
-  const addToRecent = (car) => {
-    const exists = recentCars.some((item) => item.id === car.id);
-
-    if (exists) {
-      setRecentCars([
-        car,
-        ...recentCars.filter((item) => item.id !== car.id),
-      ]);
-      return;
-    }
-
-    setRecentCars([car, ...recentCars]);
-  };
-
-  const handleViewDetails = (car) => {
-    addToRecent(car);
-    navigate(`/cars/${car.id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+export default useLocalStorage;
