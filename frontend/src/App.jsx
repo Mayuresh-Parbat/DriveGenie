@@ -7,16 +7,31 @@ import BackToTop from "./components/BackToTop";
 import Footer from "./components/Footer";
 import CarDetails from "./components/CarDetails";
 import Home from "./pages/Home";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const navigate = useNavigate();
 
-  const [theme, setTheme] = useState("dark");
-  const [compareCars, setCompareCars] = useState([]);
-  const [favorites, setFavorites] = useState([]);
-  const [recentCars, setRecentCars] = useState([]);
+  const [theme, setTheme] = useLocalStorage("drivegenie-theme", "dark");
+
+  const [compareCars, setCompareCars] = useLocalStorage(
+    "drivegenie-compare-cars",
+    []
+  );
+
+  const [favorites, setFavorites] = useLocalStorage(
+    "drivegenie-favorites",
+    []
+  );
+
+  const [recentCars, setRecentCars] = useLocalStorage(
+    "drivegenie-recent-cars",
+    []
+  );
+
   const [showTop, setShowTop] = useState(false);
-    useEffect(() => {
+
+  useEffect(() => {
     const handleScroll = () => {
       setShowTop(window.scrollY > 400);
     };
@@ -31,117 +46,3 @@ function App() {
       currentTheme === "dark" ? "light" : "dark"
     );
   };
-  const toggleFavorite = (car) => {
-    const exists = favorites.some((item) => item.id === car.id);
-
-    if (exists) {
-      setFavorites(favorites.filter((item) => item.id !== car.id));
-      return;
-    }
-
-    setFavorites([...favorites, car]);
-  };
-
-  const addToRecent = (car) => {
-    const exists = recentCars.some((item) => item.id === car.id);
-
-    if (exists) {
-      setRecentCars([
-        car,
-        ...recentCars.filter((item) => item.id !== car.id),
-      ]);
-      return;
-    }
-
-    setRecentCars([car, ...recentCars]);
-  };
-
-  const handleViewDetails = (car) => {
-    addToRecent(car);
-    navigate(`/cars/${car.id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleCompare = (car) => {
-    const exists = compareCars.some((item) => item.id === car.id);
-
-    if (exists) {
-      setCompareCars(compareCars.filter((item) => item.id !== car.id));
-      return;
-    }
-
-    if (compareCars.length >= 2) {
-      alert("You can compare only 2 cars");
-      return;
-    }
-
-    setCompareCars([...compareCars, car]);
-  };
-
-  return (
-    <div className={`app ${theme}`}>
-      <Navbar
-        theme={theme}
-        favoritesCount={favorites.length}
-        onToggleTheme={toggleTheme}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              favorites={favorites}
-              compareCars={compareCars}
-              recentCars={recentCars}
-              onToggleFavorite={toggleFavorite}
-              onCompare={handleCompare}
-              onViewDetails={handleViewDetails}
-              onClearFavorites={() => setFavorites([])}
-            />
-          }
-        />
-
-<<<<<<< HEAD
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              favorites={favorites}
-              compareCars={compareCars}
-              recentCars={recentCars}
-              onToggleFavorite={toggleFavorite}
-              onCompare={handleCompare}
-              onViewDetails={handleViewDetails}
-              onClearFavorites={() => setFavorites([])}
-            />
-          }
-        />
-
-=======
->>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
-        <Route
-          path="/cars/:carId"
-          element={
-            <CarDetails
-              favorites={favorites}
-              compareCars={compareCars}
-              onToggleFavorite={toggleFavorite}
-              onCompare={handleCompare}
-              onOpenCar={handleViewDetails}
-            />
-          }
-        />
-      </Routes>
-
-      <BackToTop show={showTop} />
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
-
-  
-
-  
