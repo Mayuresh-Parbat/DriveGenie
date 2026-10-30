@@ -1593,10 +1593,6 @@ select {
 }
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
 .car-details-page {
   width: min(1280px, 90%);
   min-height: 70vh;
@@ -1767,10 +1763,7 @@ select {
   margin: 0 0 8px;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
 .similar-car-card p {
   margin: 0;
   color: #71f0ca;
@@ -1818,10 +1811,16 @@ select {
   .details-image-box img {
     min-height: 280px;
   }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
 <<<<<<< HEAD
-}
-=======
-}
 >>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
 
 
@@ -1835,6 +1834,8 @@ select {
   gap: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
+=======
+>>>>>>> 6cb6e69 (Added new features)
 
 .logo-btn {
   border: none;
@@ -1872,6 +1873,10 @@ select {
   color: #071018;
   background: linear-gradient(90deg, #71f0ca, #69a9f7);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6cb6e69 (Added new features)
 .nav-wishlist-btn {
   border: none;
   cursor: pointer;
@@ -1917,6 +1922,10 @@ select {
     display: none;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6cb6e69 (Added new features)
 @media (max-width: 850px) {
   .navbar {
     position: sticky;
@@ -1980,3 +1989,24 @@ select {
   }
 }
 
+<<<<<<< HEAD
+=======
+
+.nav-wishlist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: #ffffff;
+  background: #202638;
+  font-weight: 700;
+}
+
+.light .nav-wishlist-btn {
+  color: #182230;
+  background: #edf1f7;
+}
+>>>>>>> 6cb6e69 (Added new features)

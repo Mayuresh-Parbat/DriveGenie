@@ -46,7 +46,11 @@ function App() {
       currentTheme === "dark" ? "light" : "dark"
     );
   };
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 6cb6e69 (Added new features)
   const toggleFavorite = (car) => {
     const exists = favorites.some((item) => item.id === car.id);
 
@@ -137,4 +141,8 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> 6cb6e69 (Added new features)

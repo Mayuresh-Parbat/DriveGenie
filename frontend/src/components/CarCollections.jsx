@@ -30,7 +30,7 @@ function CarCollections({ recentCars, favorites, onClearFavorites }) {
       )}
 
       {favorites.length > 0 && (
-        <section className="favorite-section">
+        <section className="favorite-section" id="favorite-cars">
           <div className="favorite-header">
             <div>
               <h2>❤️ My Favorite Cars</h2>

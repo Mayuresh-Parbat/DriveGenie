@@ -10,8 +10,4 @@ createRoot(document.getElementById("root")).render(
       <App />
     </BrowserRouter>
   </StrictMode>
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 39c97c9212acd0714050396054ac3dc250bc516f
