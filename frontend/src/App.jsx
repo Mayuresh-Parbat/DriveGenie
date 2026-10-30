@@ -116,3 +116,25 @@ function App() {
             />
           }
         />
+
+        <Route
+          path="/cars/:carId"
+          element={
+            <CarDetails
+              favorites={favorites}
+              compareCars={compareCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onOpenCar={handleViewDetails}
+            />
+          }
+        />
+      </Routes>
+
+      <BackToTop show={showTop} />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
