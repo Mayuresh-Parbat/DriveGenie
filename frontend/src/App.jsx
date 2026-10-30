@@ -71,4 +71,26 @@ function App() {
 
     setRecentCars([car, ...recentCars]);
   };
+  
+  const handleViewDetails = (car) => {
+    addToRecent(car);
+    navigate(`/cars/${car.id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleCompare = (car) => {
+    const exists = compareCars.some((item) => item.id === car.id);
+
+    if (exists) {
+      setCompareCars(compareCars.filter((item) => item.id !== car.id));
+      return;
+    }
+
+    if (compareCars.length >= 2) {
+      alert("You can compare only 2 cars");
+      return;
+    }
+
+    setCompareCars([...compareCars, car]);
+  };
 
