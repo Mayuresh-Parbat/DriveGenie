@@ -46,3 +46,29 @@ function App() {
       currentTheme === "dark" ? "light" : "dark"
     );
   };
+  
+  const toggleFavorite = (car) => {
+    const exists = favorites.some((item) => item.id === car.id);
+
+    if (exists) {
+      setFavorites(favorites.filter((item) => item.id !== car.id));
+      return;
+    }
+
+    setFavorites([...favorites, car]);
+  };
+
+  const addToRecent = (car) => {
+    const exists = recentCars.some((item) => item.id === car.id);
+
+    if (exists) {
+      setRecentCars([
+        car,
+        ...recentCars.filter((item) => item.id !== car.id),
+      ]);
+      return;
+    }
+
+    setRecentCars([car, ...recentCars]);
+  };
+
