@@ -93,4 +93,26 @@ function App() {
 
     setCompareCars([...compareCars, car]);
   };
+  return (
+    <div className={`app ${theme}`}>
+      <Navbar
+        theme={theme}
+        favoritesCount={favorites.length}
+        onToggleTheme={toggleTheme}
+      />
 
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              favorites={favorites}
+              compareCars={compareCars}
+              recentCars={recentCars}
+              onToggleFavorite={toggleFavorite}
+              onCompare={handleCompare}
+              onViewDetails={handleViewDetails}
+              onClearFavorites={() => setFavorites([])}
+            />
+          }
+        />
