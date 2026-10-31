@@ -82,4 +82,25 @@ function CategoryPage({
           <option value="high-to-low">Price: High to Low</option>
         </select>
       </div>
+      
+      <div className="car-grid">
+        {cars.map((car) => {
+          const isFavorite = favorites.some((item) => item.id === car.id);
+          const isCompared = compareCars.some((item) => item.id === car.id);
+
+          return (
+            <div className="car-card" key={car.id}>
+              <div className="car-image-wrapper">
+                <div className="new-badge">NEW</div>
+
+                <img src={car.image} alt={car.name} />
+
+                <button
+                  className="wishlist-btn"
+                  onClick={() => onToggleFavorite(car)}
+                  aria-label={`Add ${car.name} to favorites`}
+                >
+                  {isFavorite ? "❤️" : "🤍"}
+                </button>
+              </div>
 
