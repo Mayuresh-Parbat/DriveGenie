@@ -22,8 +22,4 @@ function useLocalStorage(key, initialValue) {
   return [value, setValue];
 }
 
-<<<<<<< HEAD
 export default useLocalStorage;
-=======
-export default useLocalStorage;
->>>>>>> 6cb6e69 (Added new features)
