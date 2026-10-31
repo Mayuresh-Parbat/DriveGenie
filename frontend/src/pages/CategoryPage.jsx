@@ -54,3 +54,21 @@ function CategoryPage({
       </main>
     );
   }
+
+  
+  return (
+    <main className="category-page">
+      <button className="back-btn" onClick={() => navigate("/")}>
+        ← Back to Browse Cars
+      </button>
+
+      <div className="category-page-heading">
+        <div>
+          <p className="category-breadcrumb">Home / Browse Cars / {category}</p>
+          <h1>{category} Cars</h1>
+          <p>
+            Explore {cars.length} premium {category.toLowerCase()} car
+            {cars.length > 1 ? "s" : ""} selected for DriveGenie.
+          </p>
+        </div>
+
