@@ -1,6 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { FaGasPump, FaUsers, FaTachometerAlt, FaHorseHead } from "react-icons/fa";
+import {
+  FaGasPump,
+  FaUsers,
+  FaTachometerAlt,
+  FaHorseHead,
+} from "react-icons/fa";
 import { featuredCars } from "../data/cars";
+import CarFitAssistant from "./CarFitAssistant";
 
 function CarDetails({
   favorites,
@@ -72,79 +78,3 @@ function CarDetails({
               {isFavorite ? "❤️" : "🤍"}
             </button>
           </div>
-
-          <h2 className="details-price">{car.price}</h2>
-
-          <p className="details-description">
-            Discover premium performance, refined luxury, and exceptional
-            engineering with the {car.name}.
-          </p>
-
-          <div className="spec-grid">
-            <div className="spec-card">
-              <FaGasPump />
-              <span>Fuel Type</span>
-              <strong>{car.fuel}</strong>
-            </div>
-
-            <div className="spec-card">
-              <FaUsers />
-              <span>Seating</span>
-              <strong>{car.seats}</strong>
-            </div>
-
-            <div className="spec-card">
-              <FaTachometerAlt />
-              <span>Top Speed</span>
-              <strong>{car.topSpeed}</strong>
-            </div>
-
-            <div className="spec-card">
-              <FaHorseHead />
-              <span>Power</span>
-              <strong>{car.horsepower}</strong>
-            </div>
-          </div>
-
-          <div className="details-actions">
-            <button className="view-btn" onClick={goToCalculator}>
-              Calculate EMI
-            </button>
-
-            <button className="share-btn" onClick={() => onCompare(car)}>
-              {isCompared ? "✓ Selected for Compare" : "⚖ Compare Car"}
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {similarCars.length > 0 && (
-        <section className="similar-cars-section">
-          <div className="section-header">
-            <h2>Similar Cars</h2>
-            <p>Explore more premium {car.category.toLowerCase()} cars</p>
-          </div>
-
-          <div className="similar-cars-grid">
-            {similarCars.map((similarCar) => (
-              <button
-                className="similar-car-card"
-                key={similarCar.id}
-                onClick={() => onOpenCar(similarCar)}
-              >
-                <img src={similarCar.image} alt={similarCar.name} />
-
-                <div>
-                  <h3>{similarCar.name}</h3>
-                  <p>{similarCar.price}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
-    </main>
-  );
-}
-
-export default CarDetails;
