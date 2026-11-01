@@ -116,3 +116,11 @@ function CarFitAssistant({ car }) {
             Tell us what matters to you and get a transparent suitability score.
           </p>
         </div>
+
+        {showResult && (
+          <div className="fit-score">
+            <strong>{result.score}%</strong>
+            <span>{getScoreLabel()}</span>
+          </div>
+        )}
+      </div>
