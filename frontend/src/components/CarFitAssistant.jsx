@@ -40,3 +40,33 @@ function CarFitAssistant({ car }) {
       }
     }
 
+    if (purpose === "Weekend performance") {
+      if (isCoupe || Number.parseInt(car.horsepower, 10) >= 700) {
+        score += 23;
+        reasons.push("High-performance specifications suit enthusiastic driving.");
+      } else {
+        score += 10;
+        reasons.push("It still offers a strong and engaging drive.");
+      }
+    }
+
+    if (purpose === "Premium presence") {
+      if (car.price.includes("Cr")) {
+        score += 16;
+        reasons.push("Its premium positioning creates a strong road presence.");
+      }
+      if (car.fuel === "Luxury") {
+        score += 8;
+        reasons.push("Luxury-focused engineering supports a refined experience.");
+      }
+    }
+
+    if (priority === "Performance") {
+      if (Number.parseInt(car.horsepower, 10) >= 600) {
+        score += 12;
+        reasons.push(`${car.horsepower} delivers exceptional performance potential.`);
+      } else {
+        score += 5;
+        reasons.push(`${car.horsepower} provides capable performance.`);
+      }
+    }
