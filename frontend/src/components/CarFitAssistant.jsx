@@ -70,3 +70,26 @@ function CarFitAssistant({ car }) {
         reasons.push(`${car.horsepower} provides capable performance.`);
       }
     }
+
+    if (priority === "Sustainability") {
+      if (isElectric) {
+        score += 14;
+        reasons.push("Its electric powertrain aligns with sustainability goals.");
+      } else {
+        score -= 4;
+        reasons.push("A non-electric powertrain is less aligned with this priority.");
+      }
+    }
+
+    if (priority === "Space & comfort") {
+      if (seatCount >= 5) {
+        score += 12;
+        reasons.push("Five-seat capacity improves everyday comfort and flexibility.");
+      } else if (seatCount >= 4) {
+        score += 8;
+        reasons.push("Four seats provide useful comfort for passengers.");
+      } else {
+        score -= 3;
+        reasons.push("The compact seating layout prioritizes driving dynamics.");
+      }
+    }
