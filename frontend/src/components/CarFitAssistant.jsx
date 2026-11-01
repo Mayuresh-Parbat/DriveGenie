@@ -93,3 +93,26 @@ function CarFitAssistant({ car }) {
         reasons.push("The compact seating layout prioritizes driving dynamics.");
       }
     }
+
+    return {
+      score: Math.max(55, Math.min(98, score)),
+      reasons: reasons.slice(0, 3),
+    };
+  }, [car, purpose, priority]);
+
+  const getScoreLabel = () => {
+    if (result.score >= 90) return "Excellent match";
+    if (result.score >= 78) return "Strong match";
+    return "Potential match";
+  };
+
+  return (
+    <section className="fit-assistant">
+      <div className="fit-assistant-heading">
+        <div>
+          <p className="fit-eyebrow">DRIVEGENIE MATCH</p>
+          <h2>Is this car right for you?</h2>
+          <p>
+            Tell us what matters to you and get a transparent suitability score.
+          </p>
+        </div>
