@@ -152,3 +152,18 @@ function CarFitAssistant({ car }) {
           </select>
         </label>
 
+        <button type="button" onClick={() => setShowResult(true)}>
+          Analyze My Match
+        </button>
+      </div>
+
+      {showResult && (
+        <div className="fit-result">
+          <h3>Why {car.name} fits your profile</h3>
+
+          <ul>
+            {result.reasons.map((reason) => (
+              <li key={reason}>✓ {reason}</li>
+            ))}
+          </ul>
+
