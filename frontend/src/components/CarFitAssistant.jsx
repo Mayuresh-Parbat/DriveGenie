@@ -124,3 +124,19 @@ function CarFitAssistant({ car }) {
           </div>
         )}
       </div>
+
+
+      <div className="fit-form">
+        <label>
+          How will you use this car?
+          <select
+            value={purpose}
+            onChange={(event) => setPurpose(event.target.value)}
+          >
+            <option>Daily commute</option>
+            <option>Family travel</option>
+            <option>Weekend performance</option>
+            <option>Premium presence</option>
+          </select>
+        </label>
+
