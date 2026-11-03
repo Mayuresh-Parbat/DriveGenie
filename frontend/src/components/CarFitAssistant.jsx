@@ -140,3 +140,15 @@ function CarFitAssistant({ car }) {
           </select>
         </label>
 
+        <label>
+          What matters most?
+          <select
+            value={priority}
+            onChange={(event) => setPriority(event.target.value)}
+          >
+            <option>Performance</option>
+            <option>Space & comfort</option>
+            <option>Sustainability</option>
+          </select>
+        </label>
+
