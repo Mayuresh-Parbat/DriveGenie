@@ -167,3 +167,14 @@ function CarFitAssistant({ car }) {
             ))}
           </ul>
 
+          <p className="fit-note">
+            Match scores are based on the preferences selected above and the
+            car information currently available on DriveGenie.
+          </p>
+        </div>
+      )}
+    </section>
+  );
+}
+
+export default CarFitAssistant;
