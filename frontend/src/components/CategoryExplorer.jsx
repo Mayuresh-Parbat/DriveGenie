@@ -27,3 +27,10 @@ function CategoryExplorer() {
     const carsInCategory = featuredCars.filter(
       (car) => car.category === category.title
     );
+
+    return {
+      ...category,
+      count: carsInCategory.length,
+      image: carsInCategory[0]?.image,
+    };
+  });
