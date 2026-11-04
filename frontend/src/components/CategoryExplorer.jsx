@@ -41,3 +41,14 @@ function CategoryExplorer() {
         <h2>Browse by Body Type</h2>
         <p>Start with the car style that matches your lifestyle.</p>
       </div>
+
+      <div className="category-explorer-grid">
+        {categories.map((category) => (
+          <button
+            type="button"
+            key={category.title}
+            className="category-explorer-card"
+            onClick={() =>
+              navigate(`/cars/category/${encodeURIComponent(category.title)}`)
+            }
+          >
