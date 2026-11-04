@@ -19,3 +19,11 @@ const categoryDetails = {
     description: "Advanced technology with electric performance.",
   },
 };
+
+function CategoryExplorer() {
+  const navigate = useNavigate();
+
+  const categories = Object.values(categoryDetails).map((category) => {
+    const carsInCategory = featuredCars.filter(
+      (car) => car.category === category.title
+    );
