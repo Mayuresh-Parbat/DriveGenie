@@ -34,3 +34,10 @@ function CategoryExplorer() {
       image: carsInCategory[0]?.image,
     };
   });
+
+  return (
+    <section className="category-explorer">
+      <div className="section-header">
+        <h2>Browse by Body Type</h2>
+        <p>Start with the car style that matches your lifestyle.</p>
+      </div>
