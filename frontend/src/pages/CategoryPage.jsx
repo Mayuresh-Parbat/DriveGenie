@@ -126,4 +126,20 @@ function CategoryPage({
                   onClick={() => onViewDetails(car)}
                 >
                   View Details
+                </button> 
+                <button
+                  className="compare-btn"
+                  onClick={() => onCompare(car)}
+                >
+                  {isCompared ? "✓ Selected" : "⚖ Compare"}
                 </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </main>
+  );
+}
+
+export default CategoryPage;
