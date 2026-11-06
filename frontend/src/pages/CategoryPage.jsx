@@ -28,3 +28,29 @@ function CategoryPage({
           parseFloat(secondCar.price.replace(/[₹Cr\s]/g, ""))
       );
     }
+
+    if (sortBy === "high-to-low") {
+      return [...categoryCars].sort(
+        (firstCar, secondCar) =>
+          parseFloat(secondCar.price.replace(/[₹Cr\s]/g, "")) -
+          parseFloat(firstCar.price.replace(/[₹Cr\s]/g, ""))
+      );
+    }
+
+    return categoryCars;
+  }, [category, sortBy]);
+
+  if (cars.length === 0) {
+    return (
+      <main className="category-page">
+        <button className="back-btn" onClick={() => navigate("/")}>
+          ← Back to Browse Cars
+        </button>
+
+        <div className="empty-state">
+          <h3>No cars found in this category</h3>
+          <p>Please return to the homepage and explore another category.</p>
+        </div>
+      </main>
+    );
+  }
