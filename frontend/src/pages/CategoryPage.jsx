@@ -102,3 +102,28 @@ function CategoryPage({
                   {isFavorite ? "❤️" : "🤍"}
                 </button>
               </div>
+              
+              <div className="car-info">
+                <p className="car-category">{car.category}</p>
+
+                <h3>{car.name}</h3>
+                <h2>{car.price}</h2>
+
+                <div className="car-details">
+                  <span>
+                    <FaGasPump />
+                    {car.fuel}
+                  </span>
+
+                  <span>
+                    <FaUsers />
+                    {car.seats}
+                  </span>
+                </div>
+
+                <button
+                  className="view-btn"
+                  onClick={() => onViewDetails(car)}
+                >
+                  View Details
+                </button>
