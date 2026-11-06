@@ -54,3 +54,30 @@ function CategoryPage({
       </main>
     );
   }
+
+  return (
+    <main className="category-page">
+      <button className="back-btn" onClick={() => navigate("/")}>
+        ← Back to Browse Cars
+      </button>
+
+      <div className="category-page-heading">
+        <div>
+          <p className="category-breadcrumb">Home / Browse Cars / {category}</p>
+          <h1>{category} Cars</h1>
+          <p>
+            Explore {cars.length} premium {category.toLowerCase()} car
+            {cars.length > 1 ? "s" : ""} selected for DriveGenie.
+          </p>
+        </div>
+
+        <select
+          className="category-sort-select"
+          value={sortBy}
+          onChange={(event) => setSortBy(event.target.value)}
+        >
+          <option value="default">Sort: Featured</option>
+          <option value="low-to-high">Price: Low to High</option>
+          <option value="high-to-low">Price: High to Low</option>
+        </select>
+      </div
