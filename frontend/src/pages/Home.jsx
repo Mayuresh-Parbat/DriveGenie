@@ -42,3 +42,18 @@ function Home({
         favorites={favorites}
         onClearFavorites={onClearFavorites}
       />
+
+      <TrendingCars />
+
+      <div id="recommendation">
+        <Recommendation />
+      </div>
+
+      <div id="calculator">
+        <Calculator />
+      </div>
+    </>
+  );
+}
+
+export default Home;
