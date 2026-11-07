@@ -16,3 +16,19 @@ function Home({
   onViewDetails,
   onClearFavorites,
 }) {
+ return (
+    <>
+      <section id="home">
+        <Hero />
+      </section>
+      <CategoryExplorer />
+
+      <div id="browse-cars">
+        <FeaturedCars
+          favorites={favorites}
+          compareCars={compareCars}
+          onToggleFavorite={onToggleFavorite}
+          onCompare={onCompare}
+          onViewDetails={onViewDetails}
+        />
+      </div>
