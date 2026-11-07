@@ -32,3 +32,13 @@ function Home({
           onViewDetails={onViewDetails}
         />
       </div>
+
+      <div id="compare">
+        <CarComparison compareCars={compareCars} />
+      </div>
+
+      <CarCollections
+        recentCars={recentCars}
+        favorites={favorites}
+        onClearFavorites={onClearFavorites}
+      />
