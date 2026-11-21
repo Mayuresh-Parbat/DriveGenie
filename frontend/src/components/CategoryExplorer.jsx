@@ -52,7 +52,7 @@ function CategoryExplorer() {
               navigate(`/cars/category/${encodeURIComponent(category.title)}`)
             }
           >
-                       <img src={category.image} alt={category.title} />
+            <img src={category.image} alt={category.title} />
 
             <div className="category-explorer-overlay">
               <p>{category.count} cars available</p>
