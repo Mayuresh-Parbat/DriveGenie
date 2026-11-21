@@ -16,7 +16,7 @@ function Home({
   onViewDetails,
   onClearFavorites,
 }) {
- return (
+  return (
     <>
       <section id="home">
         <Hero />
