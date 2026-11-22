@@ -102,5 +102,42 @@ function Calculator() {
             />
           </div>
         </div>
+         <button className="calc-btn" onClick={calculateEMI}>
+          Calculate
+        </button>
+
+        <div className="results">
+          <div>
+            <p>Monthly Payment</p>
+            <h3>₹{monthly}</h3>
+          </div>
+
+          <div>
+            <p>Total Interest</p>
+            <h3>₹{totalInterest}</h3>
+          </div>
+
+          <div>
+            <p>Total Loan</p>
+            <h3>₹{totalLoan}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="calc-right">
+        <img
+          src="https://www.pngarts.com/files/12/Aston-Martin-Silver-Car-Transparent-Image.png"
+          alt="Silver Aston Martin"
+        />
+      </div>
+    </section>
+  );
+}
+
+export default Calculator;
+
+
+         
+
 
        
