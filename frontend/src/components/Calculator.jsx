@@ -75,5 +75,32 @@ function Calculator() {
 
           <div className="input-group">
             <label>Loan Term</label>
+               <select
+              value={months}
+              onChange={(event) => setMonths(event.target.value)}
+            >
+              <option value="">Select duration</option>
+              <option value="12">12 months</option>
+              <option value="24">24 months</option>
+              <option value="36">36 months</option>
+              <option value="48">48 months</option>
+              <option value="60">60 months</option>
+              <option value="72">72 months</option>
+              <option value="84">84 months</option>
+            </select>
+          </div>
 
-         
+          <div className="input-group">
+            <label>Down Payment (₹)</label>
+
+            <input
+              type="number"
+              min="0"
+              value={down}
+              onChange={(event) => setDown(Math.max(0, event.target.value))}
+              placeholder="optional"
+            />
+          </div>
+        </div>
+
+       
