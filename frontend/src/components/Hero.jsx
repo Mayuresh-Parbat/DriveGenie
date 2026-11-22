@@ -12,24 +12,4 @@ function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `url(${heroImages[index]})`,
-      }}
-    >
-      <div className="overlay">
-        <h1 className="hero-title">
-          Discover Cars Like <span>Never Before</span>
-        </h1>
-
-        <p className="hero-subtitle">
-          Luxury • Performance • Intelligence
-        </p>
-      </div>
-    </section>
-  );
-}
-
-export default Hero;
+  
