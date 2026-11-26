@@ -34,3 +34,22 @@ const carSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+        seatingCapacity: {
+      type: Number,
+      required: true,
+      min: 1,
+    },
+    topSpeed: {
+      type: String,
+      required: true,
+    },
+    horsepower: {
+      type: String,
+      required: true,
+    },
+    rating: {
+      type: Number,
+      required: true,
+      min: 0,
+      max: 5,
+    },
