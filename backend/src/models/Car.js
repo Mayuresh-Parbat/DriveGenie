@@ -53,3 +53,34 @@ const carSchema = new mongoose.Schema(
       min: 0,
       max: 5,
     },
+        image: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      default: "",
+    },
+    isFeatured: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+carSchema.set("toJSON", {
+  transform: (document, returnedCar) => {
+    returnedCar.id = returnedCar.legacyId;
+
+    delete returnedCar._id;
+    delete returnedCar.__v;
+    delete returnedCar.legacyId;
+
+    return returnedCar;
+  },
+});
+
+module.exports = mongoose.model("Car", carSchema);
