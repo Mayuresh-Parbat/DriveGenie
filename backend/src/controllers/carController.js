@@ -69,3 +69,34 @@ async function getCarById(req, res, next) {
     next(error);
   }
 }
+
+async function createCar(req, res, next) {
+  try {
+    const car = await Car.create(req.body);
+
+    res.status(201).json({
+      message: "Car created successfully.",
+      car,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function updateCar(req, res, next) {
+  try {
+    const car = await Car.findOneAndUpdate(
+      { legacyId: Number(req.params.id) },
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!car) {
+      return res.status(404).json({
+        message: "Car not found.",
+      });
+    }
+    
