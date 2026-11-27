@@ -67,3 +67,40 @@ const cars = [
       "A powerful performance coupe balancing sharp handling with premium design.",
     isFeatured: true,
   },
+    {
+    legacyId: 5,
+    name: "Lamborghini Urus",
+    category: "SUV",
+    price: "₹4.2 Cr",
+    priceInCrores: 4.2,
+    fuel: "Petrol",
+    seats: "5 Seats",
+    seatingCapacity: 5,
+    topSpeed: "305 km/h",
+    horsepower: "657 HP",
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6",
+    description:
+      "A luxury super SUV that brings supercar performance into everyday versatility.",
+    isFeatured: true,
+  },
+  {
+    legacyId: 6,
+    name: "Mercedes-Benz G-Class",
+    category: "SUV",
+    price: "₹3.6 Cr",
+    priceInCrores: 3.6,
+    fuel: "Luxury",
+    seats: "5 Seats",
+    seatingCapacity: 5,
+    topSpeed: "220 km/h",
+    horsepower: "577 HP",
+    rating: 4.7,
+    image: "https://images.unsplash.com/photo-1520031441872-265e4ff70366",
+    description:
+      "A legendary luxury SUV with commanding design, capability, and comfort.",
+    isFeatured: true,
+  },
+];
+
+module.exports = cars;
