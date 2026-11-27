@@ -100,3 +100,40 @@ async function updateCar(req, res, next) {
       });
     }
     
+    res.status(200).json({
+      message: "Car updated successfully.",
+      car,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function deleteCar(req, res, next) {
+  try {
+    const car = await Car.findOneAndDelete({
+      legacyId: Number(req.params.id),
+    });
+
+    if (!car) {
+      return res.status(404).json({
+        message: "Car not found.",
+      });
+    }
+
+    res.status(200).json({
+      message: "Car deleted successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = {
+  getCars,
+  getCarById,
+  createCar,
+  updateCar,
+  deleteCar,
+};
+    
