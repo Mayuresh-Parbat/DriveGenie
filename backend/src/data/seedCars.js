@@ -1,1 +1,35 @@
-
+const cars = [
+  {
+    legacyId: 1,
+    name: "Lamborghini Aventador",
+    category: "Coupe",
+    price: "₹5.5 Cr",
+    priceInCrores: 5.5,
+    fuel: "Petrol",
+    seats: "2 Seats",
+    seatingCapacity: 2,
+    topSpeed: "350 km/h",
+    horsepower: "770 HP",
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b",
+    description:
+      "An iconic Italian supercar built for thrilling performance and unmistakable presence.",
+    isFeatured: true,
+  },
+  {
+    legacyId: 2,
+    name: "Rolls Royce Ghost",
+    category: "Sedan",
+    price: "₹8.9 Cr",
+    priceInCrores: 8.9,
+    fuel: "Luxury",
+    seats: "4 Seats",
+    seatingCapacity: 4,
+    topSpeed: "250 km/h",
+    horsepower: "563 HP",
+    rating: 4.9,
+    image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8",
+    description:
+      "A refined luxury sedan designed for effortless comfort and elegant journeys.",
+    isFeatured: true,
+  },
