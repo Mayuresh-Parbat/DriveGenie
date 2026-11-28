@@ -26,4 +26,13 @@ app.use((req, res) => {
     message: "Route not found.",
   });
 });
+app.use((error, req, res, next) => {
+  console.error(error);
+
+  res.status(500).json({
+    message: error.message || "Something went wrong on the server.",
+  });
+});
+
+module.exports = app;
 
